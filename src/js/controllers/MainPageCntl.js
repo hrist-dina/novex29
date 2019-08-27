@@ -154,5 +154,10 @@ export class MainPageCntl {
             '.js-parallax-balloon-29-year',
             50
         );
+        new Parallax(
+            '.js-parallax-page-2',
+            '.js-parallax-balloons',
+            50
+        );
     }
 }

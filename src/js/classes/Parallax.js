@@ -26,7 +26,7 @@ export class Parallax {
 
     mousemove() {
         const self = this;
-        document.body.addEventListener("mousemove", function (e) {
+        this.boxerContainer.addEventListener("mousemove", function (e) {
             let mousePos = self.getMousePos(e.clientX, e.clientY),
                 distX = mousePos.x - self.boxerCenterX,
                 distY = mousePos.y - self.boxerCenterY;
