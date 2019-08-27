@@ -15,3 +15,308 @@ h1, h2, h3, h4, h5, h6, ul {
 	right: 0;
 	box-sizing: border-box;
 }
+
+
+h2, .title-sm {
+	font: 500 44px/56px 'Geometria', sans-serif;
+	color: #fff;
+
+	@include md-block {
+		font-size: 36px;
+		line-height: 46px;
+	}
+}
+.content {
+	padding: 4.67vh  /* 46/9.85 */ 7.1875vw  /* 138/19.2 */;
+	max-width: 1560px;
+	margin: 0 auto;
+	box-sizing: border-box;
+
+	@include lg-block {
+		padding: 20px 15px;
+	}
+
+	&__text {
+		font-size: 18px;
+		line-height: 30px;
+		max-width: 585px;
+		color: #ffffff;
+		font-weight: normal;
+		font-style: normal;
+		margin: 5.08vh  /* 50/9.85 */ 0;
+	}
+
+	&__left {
+		padding-left: 9.38vw;
+	}
+
+	&__title {
+		position: relative;
+		font-size: 44px;
+		line-height: 56px;
+		color: #fff;
+		text-shadow: 0 6px 8px rgba(0, 0, 0, 0.08);
+
+		@include lg-block {
+			font-size: 36px;
+			line-height: 46px;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: -73px;
+			top: 0;
+			bottom: 0;
+			right: auto;
+			margin: auto;
+			width: 48px;
+			height: 2px;
+			background-color: #fff;
+		}
+	}
+	&__vertical-half {
+		height: 50%;
+	}
+}
+
+.o-hidden {
+	overflow: hidden !important;
+}
+
+.logo {
+	position: absolute;
+	display: block;
+	background-image: url("../img/page0/logo.svg");
+	width: 174px;
+	height: 37px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-indent: -6000px;
+
+	@include lg-block {
+		margin-top: 40px;
+	}
+
+	@include sm-block {
+		width: 100%;
+	}
+}
+
+.container_winners {
+	min-height: 100%;
+	height: auto !important;
+	//position: fixed !important;
+}
+
+.container_brands-table {
+	padding: 5vh 0;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.page {
+	top: 0;
+	&__part {
+		width: 50%;
+		height: 100%;
+		position: absolute;
+	}
+
+	&__left {
+		right: 50%;
+		left: 0;
+	}
+
+	&__full {
+		width: 100%;
+	}
+}
+
+.table, .mobile {
+	.page {
+		&__part {
+			width: 100vw;
+			position: relative;
+		}
+	}
+
+	.container {
+		position: relative;
+	}
+}
+
+.container_left {
+	left: 0;
+	right: auto;
+}
+
+.container_wide {
+	padding-left: 5vw;
+}
+
+.container_right {
+	right: 0;
+	left: auto;
+}
+
+.container_page-0 {
+	top: 0;
+	/* без z-index, но все ***_page-* с ним, см.:
+    .button-fairy-locked,
+    .left-bottom-soaring-image,
+    .right-bottom-soaring-image
+    это нужно чтобы .button-fairy-locked (вместе с before и after)
+    был выше по z, чем ****-bottom-soaring-image на первых двух слайдах */
+}
+.container.page__left {
+	top: 0;
+	left: -100%;
+	right: auto;
+}
+
+.container.page__right {
+	top: 0;
+	right: -100%;
+	left: auto;
+}
+
+
+.container_page-1 {
+	z-index: 200;
+}
+
+.container_page-2 {
+	z-index: 300;
+}
+
+.container_page-3 {
+	z-index: 400;
+}
+
+.container_page-4 {
+	z-index: 500;
+}
+
+.container_page-5 {
+	z-index: 600;
+}
+
+.container_less {
+	left: 40%;
+	display: none;
+}
+.container_winners {
+	top: 100%;
+	min-height: 100%;
+	height: auto !important;
+}
+
+.desktop .page__part {
+	-moz-transition: ease-in-out all .8s;
+	-webkit-transition: ease-in-out all .8s;
+	transition: ease-in-out all .8s;
+}
+
+.desktop .page.is-show .page__part {
+	top: 0;
+}
+
+
+.desktop .page.is-show .page__left {
+	left: 0;
+}
+.desktop .page.is-hide .page__left {
+	z-index: 0;
+	left: 0;
+}
+
+.desktop .page.is-show .page__right {
+	right: 0;
+}
+
+.desktop .page.is-hide .page__right {
+	z-index: 0;
+	right: 0;
+}
+
+.desktop .page.is-show .container_winners {
+	top: 0;
+}
+
+.desktop .page.is-hide .container_winners{
+	top: 100%;
+	z-index: 0;
+}
+
+
+.bg-absolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	& svg {
+		width: 100%;
+	}
+}
+
+.bg-circle {
+	background-image: url(../img/page2/circle-pattern.svg);
+}
+
+.bg-square {
+	background: #2EC6F1 url(../img/page3/pattern-squre.svg) repeat;
+	background-size: contain;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	bottom: 0;
+}
+
+.bg-chess {
+	background: #007AC9 url(../img/page4/pattern-chess.svg) repeat;
+	background-size: 400px 400px;
+}
+
+
+@include md-block {
+	.container {
+		width: 100%;
+		z-index: 0
+	}
+
+	.container_page-0 {
+		top: 0;
+		z-index: 800;
+	}
+
+}
+
+@include md-block {
+	.container.page__left {
+		top: auto;
+		left: auto;
+		right: auto;
+	}
+
+	.container.page__right {
+		top: auto;
+		right: auto;
+		left: auto;
+	}
+}
+
+
+
+.swiper-container {
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	z-index: 1;
+}
