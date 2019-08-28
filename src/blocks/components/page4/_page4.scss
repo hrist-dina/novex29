@@ -1,0 +1,71 @@
+.page-4 {
+    & .container {
+      width: 100%;
+      display: flex;
+    }
+}
+
+.draw-winners {
+    background: #007FC6;
+    width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
+
+    &__inner {
+        padding: 7.11vh 7.292vw;
+        position: relative;
+    }
+
+}
+
+
+.raffle {
+
+    &__title {
+        font-size: 48px;
+        line-height: 56px;
+        font-weight: 500;
+    }
+
+    &__inner {
+        padding: 4.57vh  /* 45/9.85 */ 4.167vw  /* 80/19.2 */;
+    }
+
+    &-card {
+
+        &__inner {
+
+        }
+
+        &__top {
+            background: #5BC6E8;
+        }
+
+        &__bottom {
+            background: #009FDA;
+        }
+
+        &__name {
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        &__city {
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: normal;
+            color: #FFFFFF;
+        }
+
+        &__number {
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: normal;
+            color: #FFFFFF;
+
+        }
+
+    }
+
+
+}

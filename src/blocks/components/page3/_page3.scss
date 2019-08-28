@@ -1,0 +1,191 @@
+.page-3 {
+    & .container {
+      width: 100%;
+      display: flex;
+    }
+}
+
+.card__info {
+    width: 33.333vw;
+    height: 100%;
+    background: url("../img/page3/bg-card.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+
+.info {
+
+    &__title {
+        font-size: 48px;
+        line-height: 56px;
+        font-weight: 500;
+        color: #CA4D6C;
+    }
+
+    &__description {
+        font-size: 27px;
+        color: #007FC6;
+        line-height: 32px;
+        font-weight: 500;
+    }
+
+}
+
+
+.stages-info {
+    position: relative;
+    margin-top: 27px;
+    border-radius: 40px 0;
+    max-height: 981px;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-bottom: 2.84vh  /* 28/9.85 */;
+    z-index: 0;
+
+    &:before {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        position: absolute;
+        background: #CA4D6C;
+        transform: matrix(1, 0.03, -0.09, 1, 0, 0);
+        border-radius: 40px 0;
+        width: 95%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      &__inner {
+        border-radius: 40px 0;
+        background: #fff;
+        padding: 4.57vh  /* 45/9.85 */ 4.167vw  /* 80/19.2 */;
+        box-sizing: border-box;
+        z-index: 1;
+      }
+
+      &__list {
+        list-style-type: none; /* Убираем исходные маркеры */
+        counter-reset: num; /* Задаём имя счетчика */
+        padding-left: 0;
+        margin: 0;
+      }
+
+      &__item {
+        position: relative;
+        margin-bottom: 2.44vh  /* 24/9.85 */;
+        font-size: 2.03vh  /* 20/9.85 */;
+        line-height: 2.74vh  /* 27/9.85 */;
+        color: #007FC6;
+        font-weight: 500;
+        padding-left: 3.125vw  /* 60/19.2 */;
+        min-height: 5.58vh  /* 55/9.85 */;
+    
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: auto;
+          margin: auto;
+          content: counter(num) '. '; /* Выводим число */
+          counter-increment: num; /* Увеличиваем значение счётчика */
+          font-size: 4.87vh  /* 48/9.85 */;
+          line-height: 4.87vh;
+          color: #CA4D6C;
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        & a {
+            font-size: 16px;
+            color: #007FC6;
+            font-weight: 500;
+            &:hover {
+              text-decoration: none;
+            }
+        }
+      }
+
+    &__text  {
+        font-size: 32px;
+        line-height: 40px;
+        color: #CA4D6C;
+        font-weight: 500;
+    }
+}
+
+.participation {
+    background: #FFB4CF;
+    width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
+
+    &__inner {
+        padding: 7.11vh 7.292vw;
+        position: relative;
+    }
+
+}
+
+
+.stages-info {
+
+}
+
+
+.regulations-info {
+
+    & a {
+      font-size: 16px;
+      color: #007FC6;
+      font-weight: 500;
+      &:hover {
+        text-decoration: none;
+      }
+  
+    }
+    &__title {
+      font-size: 1.62vh  /* 16/9.85 */;
+      line-height: 2.03vh  /* 20/9.85 */;
+      color: #007FC6;
+      font-weight: 500;
+  
+    }
+  
+    &__description {
+      font-size: 1.62vh  /* 16/9.85 */;
+      line-height: 2.03vh  /* 20/9.85 */;
+      color: #007FC6;
+      font-weight: normal;
+    }
+  
+  }
+.social {
+    &__list {
+        display: flex;
+        vertical-align: middle;
+        
+    }
+    &__item {
+        display: inline-block;
+        text-decoration: none;
+        margin-right: 30px;
+    
+        &:last-child {
+          margin-right: 0;
+        }
+    
+      }
+          &__text  {
+            color: #CA4D6C;
+            font-size: 16px;
+            line-height: 32px;
+            font-weight: 500;
+          }
+
+
+}
+ 
