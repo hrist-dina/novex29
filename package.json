@@ -37,8 +37,8 @@
 		"gulp-rename": "^1.2.2",
 		"gulp-replace": "^0.6.1",
 		"gulp-sass": "^3.1.0",
-		"gulp-svg-sprite": "^1.5.0",
 		"gulp-sourcemaps": "^2.6.4",
+		"gulp-svg-sprite": "^1.5.0",
 		"gulp-watch": "^5.0.0",
 		"imagemin-giflossy": "^5.1.10",
 		"imagemin-jpeg-recompress": "^5.1.0",
@@ -51,9 +51,10 @@
 		"yargs": "^12.0.5"
 	},
 	"dependencies": {
-		"smart-grid": "^2.1.2",
+		"@fancyapps/fancybox": "^3.5.7",
 		"detect.js": "^2.2.3",
 		"inputmask": "^4.0.8",
-		"jquery": "^3.4.1"
+		"jquery": "^3.4.1",
+		"smart-grid": "^2.1.2"
 	}
 }

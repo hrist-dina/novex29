@@ -7,6 +7,7 @@ import {Paginator} from "../classes/Paginator";
 import {DeviceClassesSetter} from "../classes/DeviceClassesSetter";
 import {TicketForm} from "../classes/TicketForm";
 import {Parallax} from "../classes/Parallax";
+import {Map} from "../classes/Map";
 
 
 export class MainPageCntl {
@@ -24,6 +25,7 @@ export class MainPageCntl {
         this.initNavigationWinners();
         this.initInputMask();
         this.initParallax();
+        this.initMap();
 
         this.events();
     }
@@ -159,5 +161,10 @@ export class MainPageCntl {
             '.js-parallax-balloons',
             50
         );
+    }
+
+    initMap() {
+        let map = new Map('map');
+        map.init();
     }
 }

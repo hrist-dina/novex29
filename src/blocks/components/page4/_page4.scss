@@ -1,71 +1,220 @@
 .page-4 {
-    & .container {
-      width: 100%;
-      display: flex;
-    }
+  & .container {
+    width: 100%;
+    display: flex;
+  }
 }
 
-.draw-winners {
+.map {
+  background: #E1F7FF;
+  width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
+}
+
+.quest-map {
+  position: relative;
+  width: 33.333vw;
+  height: 100%;
+  background: url('../img/page4/bg-bliss.png'), linear-gradient(0deg, #007FC6 0%, #00A4E8 100%);
+  background-size: cover;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: url("../img/page4/gift.png") no-repeat center bottom;
+    background-size: contain;
+    width: 640px;
+    height: 504px;
+    z-index: -1;
+  }
+
+  &__inner {
+    padding: 7.31vh 4.167vw 44.67vh  7.292vw;
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 4.06vh;
+  }
+
+  &__desc {
+    font-size: 2.03vh  /* 20/9.85 */;
+    line-height: 2.74vh  /* 27/9.85 */;
+    color: #fff;
+    padding-bottom: 2.44vh  /* 24/9.85 */;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    margin-bottom: 3.25vh  /* 32/9.85 */;
+  }
+
+  &__info {
+    font-size: 1.62vh  /* 16/9.85 */;
+    line-height: 2.44vh  /* 24/9.85 */;
+    color: #fff;
+    margin-bottom: 3.25vh  /* 32/9.85 */;
+  }
+}
+
+.placemark {
+  display: inline-block;
+  min-width: 200px;
+  max-height: 60px;
+  background: #fff;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+
+  position: relative;
+  left: -100px;
+  top: -30px;
+  padding: 7px 25px 10px 68px;
+  box-sizing: border-box;
+
+  $border: 3px;
+  background-clip: padding-box;
+  border: solid $border transparent;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(0deg, #007FC6 0%, #00A4E8 100%);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 0;
+    bottom: 0;
+    left: 10px;
+    background: url("../img/page4/placemark-gift.png") no-repeat center;
+    width: 49px;
+    height: 55px;
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 24px;
+    color: #007FC6;
+    white-space: nowrap;
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 16px;
+    color: #4F4F4F;
+    white-space: nowrap;
+  }
+}
+
+.panel {
+  display: none;
+  background-color: #007FC6;
+  padding: 7.11vh  /* 70/9.85 */ 4.167vw  /* 80/19.2 */;
+  width: 33.333vw;
+  box-sizing: border-box;
+  height: 100vh;
+  margin-top: -10px;
+  margin-left: -10px;
+  z-index: 10000;
+  position: absolute;
+  font-size: 1.62vh  /* 16/9.85 */;
+  line-height: 2.44vh  /* 24/9.85 */;
+  color: #fff;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    right: -18px;
+    top: 50%;
+    margin-top: -18px;
     background: #007FC6;
-    width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
+    @include rotate(-45deg);
+  }
 
-    &__inner {
-        padding: 7.11vh 7.292vw;
-        position: relative;
+  &__item {
+    padding-bottom: 3.25vh  /* 32/9.85 */;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    margin-bottom: 3.25vh  /* 32/9.85 */;
+    max-height: 50vh;
+    overflow: auto;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+      margin-bottom: 0;
     }
+  }
 
+  &__pics {
+    display: flex;
+
+    & a {
+      display: inline-block;
+      width: 7.8125vw  /* 150/19.2 */;
+      height: 11.37vh  /* 112/9.85 */;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-right: 0.78125vw  /* 15/19.2 */;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  & h4 {
+    font-size: 3.25vh  /* 32/9.85 */;
+    line-height: 5.69vh  /* 56/9.85 */;
+    color: #fff;
+    margin-bottom: 2.44vh  /* 24/9.85 */;
+  }
+
+  & .address {
+    position: relative;
+    font-size: 2.03vh  /* 20/9.85 */;
+    line-height: 2.44vh  /* 24/9.85 */;
+    color: #fff;
+    padding-left: 37px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: auto;
+      margin: auto;
+      background: url("data:image/svg+xml,%3Csvg width='22' height='28' viewBox='0 0 22 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 11C21 12.313 20.5634 13.8257 19.7993 15.4397C19.0397 17.0442 17.9861 18.6869 16.824 20.2421C14.8065 22.9417 12.5131 25.3099 11 26.6747C9.48694 25.3099 7.19348 22.9417 5.17604 20.2421C4.01388 18.6869 2.9603 17.0442 2.2007 15.4397C1.43658 13.8257 1 12.313 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11Z' stroke='%23FFB4CF' stroke-width='2'/%3E%3Ccircle cx='11' cy='11' r='5' fill='%23FFB4CF'/%3E%3C/svg%3E%0A") center no-repeat;
+      width: 22px;
+      height: 28px;
+    }
+  }
 }
 
+.panel-close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 29px;
+  height: 29px;
+  cursor: pointer;
+  background: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.8701 0L28.2843 1.41422L15.5564 14.1421L28.2844 26.8701L26.8701 28.2843L14.1422 15.5563L1.41421 28.2843L0 26.8701L12.728 14.1421L9.15527e-05 1.41422L1.41431 0L14.1422 12.7279L26.8701 0Z' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;
 
-.raffle {
+  &:hover {
+    opacity: 0.8;
+  }
+}
 
-    &__title {
-        font-size: 48px;
-        line-height: 56px;
-        font-weight: 500;
-    }
-
-    &__inner {
-        padding: 4.57vh  /* 45/9.85 */ 4.167vw  /* 80/19.2 */;
-    }
-
-    &-card {
-
-        &__inner {
-
-        }
-
-        &__top {
-            background: #5BC6E8;
-        }
-
-        &__bottom {
-            background: #009FDA;
-        }
-
-        &__name {
-            font-size: 20px;
-            line-height: 24px;
-            color: #FFFFFF;
-            font-weight: 500;
-        }
-
-        &__city {
-            font-size: 20px;
-            line-height: 24px;
-            font-weight: normal;
-            color: #FFFFFF;
-        }
-
-        &__number {
-            font-size: 20px;
-            line-height: 24px;
-            font-weight: normal;
-            color: #FFFFFF;
-
-        }
-
-    }
-
+.panel-content {
 
 }
