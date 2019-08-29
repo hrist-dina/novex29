@@ -1,0 +1,54 @@
+.page-5 {
+
+  
+    & .content__title {
+      box-shadow: none;
+      &:before {
+        content: none;
+      }
+    }
+  
+    & .block-vertical-center {
+      padding-left: 7.292vw  /* 140/19.2 */;
+      padding-right: 7.8125vw  /* 150/19.2 */;
+  
+
+    }
+  
+    &__pattern {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      height: auto;
+      z-index: -1;
+    }
+  
+    &__left {
+      background-color: #fff;
+  
+  
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        top: 0;
+        left: 0;
+        background-color: #007AC9;
+        z-index: -1;
+      }
+    }
+  
+    & .check-pic {
+      @include to(1380px) {
+        max-width: 27.917vw  /* 536/19.2 */;
+        margin: auto;
+  
+        & img {
+          width: 100%;
+        }
+      }
+  
+    }
+  
+  }

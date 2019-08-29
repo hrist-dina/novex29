@@ -1,0 +1,66 @@
+section#main.page.page-5.js-page
+    .container.container_page-5.page__right
+        .bg-container
+        section.form
+            .form__inner
+                form.ticket-form.js-ticket-form(method='POST', action='', accept-charset='UTF-8')
+                .ticket-form__elem
+                    label(for='name')
+                        span.ticket-form__elem-title Фамилия Имя Отчество
+                        input#name.js-anti-scroll(type='text', name='name', autocomplete='off' data-validator-require="true")
+                .ticket-form__elem
+                    label(for='city')
+                        span.ticket-form__elem-title Город
+                        input#city.js-anti-scroll(type='text', name='city', autocomplete='off' data-validator-require="true")
+                .ticket-form__elem
+                    label(for='phone')
+                        span.ticket-form__elem-title Телефон
+                        input#phone.js-anti-scroll.js-phone-mask(maxlength='18', type='text', name='phone', autocomplete='off' data-validator-require="true")
+                .ticket-form__elem
+                    label(for='code')
+                        span.ticket-form__elem-title Уникальный код с чека
+                        input#code.js-anti-scroll(type='text', name='code', autocomplete='off' data-validator-require="true")
+                .ticket-form__elem
+                    label(for='card')
+                        span.ticket-form__elem-title Номер бонусной карты
+                        input#card.js-anti-scroll.js-card-mask(type='text', name='card', autocomplete='off' data-validator-require="true")
+                .ticket-form__elem
+                    label(for='email')
+                        span.ticket-form__elem-title Электронная почта
+                        input#email.js-anti-scroll(type='text', name='email', autocomplete='off' data-validator-require="true" data-validator-type="email")
+                .ticket-form__verification
+                    .ticket-form__verification-check
+                        label
+                            input.checkbox-hide(type='checkbox')
+                            span.checkbox-show
+                    .ticket-form__verification-text
+                        | Я ознакомлен и принимаю
+                        a.js-scroll-link(href='#conditions') Условия розыгрыша
+                        | , согласен на обработку персональных данных
+                button.button.button_red.js-ticket-form__submit-button(disabled='')
+                    | Отправить
+        .ticket-form-success.js-ticket-form-success(style='display: none;')
+            .ticket-form-success__container
+                h2.title-sm
+                    | Код успешно
+                    br
+                    | зарегистрирован
+                .ticket-form-success__button
+                    a.button.button-blue.js-close-form-success-message(href='#')
+                        | Зарегистрировать еще
+                .ticket-form-success__text
+                    | Сохраняйте чек до конца акции!
+        .ticket-form-success.js-ticket-form-success-before-action(style='display: none;')
+            .ticket-form-success__container
+                .ticket-form-success__icon
+                h2.title-sm.ticket-form-success__title
+                    | Акция
+                    br
+                    | еще не началась!
+        .ticket-form-success.js-ticket-form-success-after-action(style='display: none;')
+            .ticket-form-success__container
+                .ticket-form-success__icon
+                h2.title-sm.ticket-form-success__title
+                    | Акция
+                    br
+                    | уже закончилась!
