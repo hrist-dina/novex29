@@ -141,7 +141,7 @@ export class TicketForm {
 
     bindCheckAgreement() {
         let submitBtn = this.form.find('.js-ticket-form__submit-button');
-        this.form.find('.ticket-form__verification-check').find('input').on('change', function() {
+        this.form.find('.js-verification-check').find('input').on('change', function() {
             $(this).prop('checked') ? submitBtn.prop('disabled', false) : submitBtn.prop('disabled', true);
         });
     }

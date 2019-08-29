@@ -1,0 +1,1249 @@
+/*reset begins*/
+html, body, h1, h2, h3, h4, h5, h6, a, img, form, label, table, tbody, tfoot, thead, tr, th, td, ul, ol, li, figure, figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  //font: 16px/26px Arial, Helvetica, sans-serif;
+  //color: #202020;
+}
+
+html.tablet {
+  //font: 20px/26px Arial, Helvetica, sans-serif;
+  //color: #202020;
+}
+
+@media (orientation: landscape) {
+  html.tablet {
+    //font: 16px/26px Arial, Helvetica, sans-serif;
+    //color: #202020;
+  }
+}
+
+@media ( max-width: 1500px ) {
+  html {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+@media ( max-width: 1300px ) {
+  html {
+    font-size: 14px;
+    line-height: 23px;
+  }
+}
+
+@media ( max-width: 1100px ) {
+  html {
+    font-size: 11px;
+    line-height: 21px;
+  }
+}
+
+img {
+  border: 0;
+}
+
+table {
+  border-spacing: 0;
+}
+
+tr, td {
+  vertical-align: top;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+/*reset ends*/
+
+/*base styles begins*/
+
+.bold {
+  font-weight: bold !important;
+}
+
+.normal {
+  font-weight: normal !important;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  display: inline-block !important;
+  position: relative;
+}
+
+.content ul {
+
+}
+
+.content ul li {
+
+}
+
+.content ul li:before {
+
+}
+
+.content ol {
+
+}
+
+.content ol li {
+
+}
+
+.content ol li span {
+
+}
+
+.fleft {
+  float: left !important;
+}
+
+.fright {
+  float: right !important;
+}
+
+.fnone {
+  float: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.in-block {
+  display: inline-block !important;
+}
+
+.in-table {
+  display: inline-table !important;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.none {
+  display: none !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tablet .tablet-hidden {
+  display: none !important;
+}
+
+/*для увеличения значения специфичности*/
+.tablet.ios .tablet-hidden {
+  display: none !important;
+}
+
+@media screen and (orientation: landscape) {
+  .landscape-hidden {
+    display: none !important;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .tablet .tablet-portrait-hidden {
+    display: none !important;
+  }
+}
+
+@media (max-device-aspect-ratio: 3/2) and (orientation: landscape) {
+  .tablet.android .tablet-portrait-hidden {
+    display: none !important;
+  }
+}
+
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+.static {
+  position: static !important;
+}
+
+.vtop {
+  vertical-align: top !important;
+}
+
+.nowrap {
+  white-space: nowrap !important;
+}
+
+.default-color {
+  color: #202020 !important;
+}
+
+.gray {
+  color: #999;
+}
+
+.blue {
+  color: #507aad !important;
+}
+
+.orange {
+  color: #ed731c !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.o-hidden {
+  overflow: hidden !important;
+}
+
+.dotted {
+  border-bottom-style: dotted !important;
+}
+
+
+.tablet .button_check.button {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  line-height: 1em;
+  font-size: 1.7rem;
+  padding: 0;
+}
+
+@media (max-device-width: 1200px) and (orientation: landscape) {
+  .tablet .button_check.button {
+    font-size: 1rem;
+  }}
+
+.button[disabled] {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#888888+0,888888+100 */
+  background: #888888 !important; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #888888 0%, #888888 100%) !important; /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #888888 0%,#888888 100%) !important; /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #888888 0%,#888888 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#888888',GradientType=1 ) !important; /* IE6-9 fallback on horizontal gradient */
+  cursor: default;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.link-inner {
+  border-bottom-color: inherit;
+  border-bottom-width: 1px;
+  border-bottom-style: inherit;
+}
+
+.wrapper-justify-in-blocks:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+
+
+hr.hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 22px 0 34px 0;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.underline {
+  border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+/*base styles ends*/
+
+/*pages begins*/
+.main-wrapper {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-right: -17px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tablet.ios .main-wrapper {
+  overflow: visible;
+}
+
+.mobile .main-wrapper {
+  overflow-y: scroll;
+}
+
+.container {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  clip: rect(auto, auto, auto, auto);
+}
+
+.container_winners {
+  min-height: 100%;
+  height: auto !important;
+}
+
+.container_brands-table {
+  padding: 5vh 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.block-vertical-center {
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%); /* Для Firefox */
+  -ms-transform: translateY(-50%); /* Для IE */
+  -webkit-transform: translateY(-50%); /* Для Safari, Chrome, iOS */
+  -o-transform: translateY(-50%); /* Для Opera */
+  transform: translateY(-50%);
+}
+
+.block-horizontal-center {
+  position: relative;
+  left: 50%;
+  -moz-transform: translateX(-50%); /* Для Firefox */
+  -ms-transform: translateX(-50%); /* Для IE */
+  -webkit-transform: translateX(-50%); /* Для Safari, Chrome, iOS */
+  -o-transform: translateX(-50%); /* Для Opera */
+  transform: translateX(-50%);
+}
+
+
+.block-vertical-center_t39p {
+  top: 39% !important;
+}
+
+.desktop .pages {
+
+}
+
+.desktop .page__part {
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+
+@media (max-device-width: 1200px) and (orientation: portrait) {
+  .tablet .container_left {
+    right: 0;
+  }
+
+  .tablet .container_right {
+    left: 0;
+  }
+
+  .tablet .container_narrow_0 {
+    top: 0;
+  }
+
+  .tablet .container_narrow_1 {
+    top: 100%;
+  }
+
+  .tablet .container_narrow_2 {
+    top: 200%;
+  }
+
+  .tablet .container_narrow_3 {
+    top: 300%;
+  }
+
+  .tablet .container_narrow_4 {
+    top: 400%;
+  }
+
+  .tablet .container_narrow_5 {
+    top: 500%;
+  }
+
+  .tablet .container_narrow_6 {
+    top: 600%;
+  }
+
+  .tablet .container_narrow_7 {
+    top: 700%;
+  }
+}
+
+@media (max-device-width: 1200px) and (orientation: landscape) {
+  .tablet .container_left {
+    right: 0;
+  }
+
+  .tablet .container_right {
+    left: 0;
+  }
+
+  .tablet .container_narrow_0 {
+    top: 0;
+  }
+
+  .tablet .container_narrow_1 {
+    top: 100%;
+  }
+
+  .tablet .container_narrow_2 {
+    top: 200%;
+  }
+
+  .tablet .container_narrow_3 {
+    top: 300%;
+  }
+
+  .tablet .container_narrow_4 {
+    top: 400%;
+  }
+
+  .tablet .container_narrow_5 {
+    top: 500%;
+  }
+
+  .tablet .container_narrow_6 {
+    top: 600%;
+  }
+
+  .tablet .container_narrow_7 {
+    top: 700%;
+  }
+}
+
+/* на некоторых андроид планшетах при открытой клавиатуре изменяется ориентация, чтобы с большей вероятностью
+ определить что девайс действительно был повернут ландшафтно, а не просто открыта клавиатура - добавляем
+ число screenOrientationProportions */
+@media (max-device-aspect-ratio: 3/2) and (orientation: landscape) {
+  .tablet.android .container_left {
+    right: 0;
+  }
+
+  .tablet.android .container_right {
+    left: 0;
+  }
+
+  .tablet.android .container_narrow_0 {
+    top: 0;
+  }
+
+  .tablet.android .container_narrow_1 {
+    top: 100%;
+  }
+
+  .tablet.android .container_narrow_2 {
+    top: 200%;
+  }
+
+  .tablet.android .container_narrow_3 {
+    top: 300%;
+  }
+
+  .tablet.android .container_narrow_4 {
+    top: 400%;
+  }
+
+  .tablet.android .container_narrow_5 {
+    top: 500%;
+  }
+
+  .tablet.android .container_narrow_6 {
+    top: 600%;
+  }
+
+  .tablet.android .container_narrow_7 {
+    top: 700%;
+  }
+}
+
+.footer {
+  min-height: 150px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .8;
+  text-align: center;
+  font: 0.8rem 'Geometria', Arial, Helvetica, sans-serif;
+  color: #fff;
+  background: transparent;
+}
+
+.tablet .footer {
+  font: 1rem/4em 'Geometria', Arial, Helvetica, sans-serif;
+}
+
+.footer__copyright {
+  position: absolute;
+  left: 50%;
+  bottom: 3vh;
+  -moz-transform: translateX(-50%); /* Для Firefox */
+  -ms-transform: translateX(-50%); /* Для IE */
+  -webkit-transform: translateX(-50%); /* Для Safari, Chrome, iOS */
+  -o-transform: translateX(-50%); /* Для Opera */
+  transform: translateX(-50%);
+}
+
+.footer__development {
+  position: absolute;
+  right: 30px;
+  bottom: 3vh;
+}
+
+.footer__development a {
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, .4);
+  cursor: pointer;
+}
+
+.tablet .page-conditions {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+62,d88fc0+100&1+0,0.28+100 */
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.55) 62%, rgba(216,143,192,0.28) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.55) 62%,rgba(216,143,192,0.28) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0.55) 62%,rgba(216,143,192,0.28) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#47d88fc0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.visual-effects-slide {
+  background-position: 50% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.visual-effects-slide_page-information-left {
+  background-color: #007AC8;
+}
+
+.visual-effects-slide_page-first-step-left {
+  background-color: #D5F0F9;
+}
+
+.visual-effects-slide_page-first-step-right {
+  background-image: url(../img/bg-triangle-fragment.png);
+  background-repeat: repeat;
+  background-size: 25%;
+  background-position: 0 0;
+}
+
+.visual-effects-slide_page-step-one-right {
+  background: #007AC8 0 0 repeat;
+  background-size: 25%;
+}
+
+.visual-effects-slide_page-second-step-left {
+  background-color: #009EE6;
+}
+
+.visual-effects-slide_form-page {
+  background: #D5F0F9 0 50% repeat;
+  background-size: 25%;
+}
+
+.visual-effects-slide_main-page {
+  background-position: center;
+}
+
+.visual-effects-slide_salute {
+  background: no-repeat 50%;
+  background-size: cover;
+}
+
+.visual-effects-slide_winners {
+  background: #007AC8;
+}
+
+@media (max-device-width: 1200px) and (orientation: portrait) {
+  .visual-effects-slide_girl {
+    font-size: 2em;
+  }
+
+  .visual-effects-slide_girl .side-panel{
+    font-size: 0.5em;
+  }
+}
+
+@media (max-device-width: 1200px) and (orientation: portrait) {
+  .visual-effects-slide_check {
+    font-size: 2em;
+  }
+
+  .visual-effects-slide_check .side-panel{
+    font-size: 0.5em;
+  }
+}
+
+.slide-content {
+  padding-top: 54px;
+}
+
+.slide-content-left {
+  padding-right: 7vw;
+}
+
+.slide-content-right {
+  padding-left: 7vw;
+}
+
+@media (max-device-width: 1200px) and (orientation: portrait) {
+  .tablet .money_winners {
+    vertical-align: bottom;
+    height: 4vh;
+  }
+}
+
+.action-dates {
+  font-size: 1.3rem;
+  line-height: 1.5em;
+  font-weight: 500;
+  color: #FFF;
+  display: inline-block;
+  vertical-align: top;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.tablet .visual-effects-slide_page-information-left .action-dates {
+  margin-top: 20px;
+}
+
+
+.button-fairy-locked {
+  position: relative;
+  z-index: 280;
+  opacity: 1;
+  top: 0;
+  -moz-transition:    opacity 0.5s ease, top 2s ease;
+  -webkit-transition: opacity 0.5s ease, top 2s ease;
+  transition:         opacity 0.5s ease, top 2s ease;
+}
+
+.page-0.is-hide .button-fairy-locked {
+  opacity: 0;
+  top: -1500px;
+}
+
+.step-number {
+  position: absolute;
+  top: -28px;
+  left: -33px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font: 700 1.5rem 'Geometria', Arial, Helvetica, sans-serif;
+  line-height: 53px;
+  color: #fff;
+  background: #fecd07;
+}
+
+.step-number_blue {
+  background-color: #1abae0;
+}
+
+.step-number_green {
+  background-color: #5db55d;
+}
+
+.tablet .step-number {
+  top: -35px;
+  left: -45px;
+  width: 70px;
+  height: 70px;
+  font: 1.7rem 'Geometria', Arial, Helvetica, sans-serif;
+  line-height: 70px;
+}
+
+.step-first-left {
+  text-align: center;
+}
+
+.step-first-left-pic {
+  height: auto;
+  width: 50%;
+}
+
+.tablet .step-first-left-pic {
+  height: auto;
+  width: 80%;
+}
+
+@media (orientation: landscape) {
+  .tablet .step-first-left-pic {
+    height: auto;
+    width: 60%;
+  }
+}
+
+.step-first-left {
+  position: absolute;
+  top: 50%;
+  -moz-transform: translateY(-50%); /* Для Firefox */
+  -ms-transform: translateY(-50%); /* Для IE */
+  -webkit-transform: translateY(-50%); /* Для Safari, Chrome, iOS */
+  -o-transform: translateY(-50%); /* Для Opera */
+  transform: translateY(-50%);
+}
+
+.step-first {
+  position: absolute;
+  top: 44%;
+}
+
+.step-first__header {
+  position: relative;
+  margin: 8vh 0;
+}
+
+.step-first__date {
+  margin-top: 5vh;
+}
+
+.step-first__title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.step-second {
+  margin-top: 7vh;
+  @include sm-block {
+    margin-top: 0;
+  }
+}
+
+.step-second__header {
+  position: relative;
+}
+
+.step-second__content {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.step-second__content img {
+  max-height: 100%;
+}
+
+.step-second__button {
+  position: absolute;
+  top: 35%;
+  left: 14px;
+  width: 130px;
+  height: 130px;
+  padding-top: 55px;
+  background: #FF2B68;
+  border-radius: 50%;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.tablet .step-second__button {
+  left: 150px;
+  width: 210px;
+  height: 210px;
+  padding-top: 88px;
+}
+
+@media (orientation: landscape) {
+  .tablet .step-second__button {
+    left: 0;
+    width: 148px;
+    height: 148px;
+    padding-top: 62px;
+  }
+}
+
+.step-second__arrow {
+  position: absolute;
+  width: 18%;
+  top: 28px;
+  left: 50%;
+  -moz-transform: translate(-50%, 0); /* Для Firefox */
+  -ms-transform: translate(-50%, 0); /* Для IE */
+  -webkit-transform: translate(-50%, 0); /* Для Safari, Chrome, iOS */
+  -o-transform: translate(-50%, 0); /* Для Opera */
+  transform: translate(-50%, 0);
+  -moz-transition: top 0.3s ease;
+  -webkit-transition: top 0.3s ease;
+  transition: top 0.3s ease;
+}
+
+@media (max-device-width: 1200px) and (orientation: portrait) {
+  .step-second__content {
+    text-align: center;
+    height: 54vh;
+  }
+
+  .step-second__content .check-pic{
+    height: 100%;
+  }
+
+  .step-second__button-wrapper {
+    width: 20vw;
+    height: 20vw;
+    padding-top: 9vw;
+  }
+
+  .step-second__content .button_check {
+    font-size: 1em;
+  }
+
+  .step-second__content .step-second__arrow {
+    height: 3vh;
+  }
+}
+
+.step-second__content {
+  @include md-block {
+    height: 100%;
+    width: 100%;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+.conditions {
+
+}
+.conditions__header {
+  margin-bottom: 2vh;
+}
+
+.conditions__header-title {
+  color: #15240d;
+}
+
+.conditions__text {
+  font: 300 1em/1.7em 'Geometria', Arial, Helvetica, sans-serif;
+  color: #15240d;
+  position: relative;
+  max-height: 58vh;
+  overflow: hidden;
+}
+
+.conditions__text:before {
+  content: "";
+  position: absolute;
+  top: 130px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffff+0,fbfeff+100&0+0,0.55+79,1+100 */
+  background: -moz-linear-gradient(top, rgba(254,255,255,0) 0%, rgba(252,254,255,0.55) 79%, rgba(251,254,255,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(254,255,255,0) 0%,rgba(252,254,255,0.55) 79%,rgba(251,254,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(254,255,255,0) 0%,rgba(252,254,255,0.55) 79%,rgba(251,254,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00feffff', endColorstr='#fbfeff',GradientType=0 ); /* IE6-9 */
+}
+
+.conditions__button {
+  margin-top: 3vh;
+}
+
+@media (max-device-width: 1200px) and (orientation: portrait) {
+  .conditions__text {
+    max-height: 60vh;
+  }
+}
+
+.side-panel {
+  width: 20px;
+  position: fixed;
+  left: 1vw;
+  top: 1vh;
+  font: 300 1em/1.2em 'Geometria', Arial, Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.is-show .side-panel {
+  z-index: 555;
+}
+
+.is-show .scroll-panel {
+  z-index: 555;
+}
+
+.tablet .side-panel {
+  font: 300 1.5rem/1.2em 'Geometria', Arial, Helvetica, sans-serif;
+  left: 3vw;
+}
+
+.IE .side-panel {
+  position: absolute;
+}
+
+.tablet.ios .side-panel {
+  position: absolute;
+}
+
+.side-panel_dark {
+  color: #8bc0e5;
+}
+
+.side-panel__info {
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -moz-transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.side-panel__highlight {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 400;
+}
+
+.side-panel_dark .side-panel__highlight {
+  color: #007AC8;
+}
+
+.side-panel__after-info {
+  position: absolute;
+  top: 195px;
+  width: 100%;
+}
+
+.side-panel__line {
+  display: none;
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  position: absolute;
+  margin: auto;
+  width: 0;
+  left: 0;
+  right: 0;
+  height: 17vh;
+}
+
+.side-panel_dark .side-panel__line {
+  border-left-color: #15240d;
+}
+
+.paginator {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 12.5vh;
+}
+
+.paginator__item {
+  list-style: none;
+}
+
+.paginator__link,
+a.paginator__link:link,
+a.paginator__link:visited,
+a.paginator__link:hover,
+a.paginator__link:active,
+a.paginator__link:focus {
+  width: 100%;
+  padding-top: 100%;
+  display: inline-block;
+  position: relative;
+  border-bottom: 0;
+}
+
+.paginator__link_h-hidden,
+a.paginator__link_h-hidden:link,
+a.paginator__link_h-hidden:visited,
+a.paginator__link_h-hidden:hover,
+a.paginator__link_h-hidden:active,
+a.paginator__link_h-hidden:focus {
+  display: none;
+}
+
+.paginator__link:after {
+  content: '';
+  background: rgba(255, 255, 255, 0.4);
+  width: 15px;
+  height: 2px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -moz-transition: background 0.3s ease, width 0.3s ease;
+  -webkit-transition: background 0.3s ease, width 0.3s ease;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.side-panel_dark .paginator__link:after {
+  background-color: #007AC8;
+  opacity: 0.4;
+}
+
+.desktop a.paginator__link:hover:after {
+  background: rgba(255, 255, 255, 1);
+  width: 30px;
+}
+
+.desktop .side-panel_dark a.paginator__link:hover:after {
+  background-color: #007AC8;
+  opacity: 1;
+}
+
+.paginator__link.active:after {
+  background: rgba(255, 255, 255, 1);
+  width: 30px;
+}
+
+.page-0 .paginator__item:nth-child(1) .paginator__link:after {
+  width: 30px;
+}
+
+.page-1 .paginator__item:nth-child(2) .paginator__link:after {
+  width: 30px;
+}
+
+.page-2 .paginator__item:nth-child(3) .paginator__link:after {
+  width: 30px;
+}
+
+.page-3 .paginator__item:nth-child(5) .paginator__link:after {
+  width: 30px;
+}
+
+.page-4 .paginator__item:nth-child(7) .paginator__link:after {
+  width: 30px;
+}
+
+.page-5 .paginator__item:nth-child(8) .paginator__link:after {
+  width: 30px;
+}
+
+.side-panel_dark .paginator__link.active:after {
+  background-color: #007AC8;
+  opacity: 1;
+}
+
+@media (max-device-width: 1200px) and (orientation: portrait) {
+  .paginator__link_h-hidden,
+  a.paginator__link_h-hidden:link,
+  a.paginator__link_h-hidden:visited,
+  a.paginator__link_h-hidden:hover,
+  a.paginator__link_h-hidden:active,
+  a.paginator__link_h-hidden:focus {
+    display: inline-block;
+  }
+}
+
+@media (max-device-aspect-ratio: 3/2) and (orientation: landscape) {
+  .tablet.android .paginator__link_h-hidden,
+  .tablet.android a.paginator__link_h-hidden:link,
+  .tablet.android a.paginator__link_h-hidden:visited,
+  .tablet.android a.paginator__link_h-hidden:hover,
+  .tablet.android a.paginator__link_h-hidden:active,
+  .tablet.android a.paginator__link_h-hidden:focus {
+    display: inline-block;
+  }
+}
+
+.ticket-form-success {
+  background: #007AC8 url("../img/page2/circle-pattern.svg") 0 0 repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 7vw 0 8vw;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ticket-form-success__container {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -moz-transform: translate(0, -50%); /* Для Firefox */
+  -ms-transform: translate(0, -50%); /* Для IE */
+  -webkit-transform: translate(0, -50%); /* Для Safari, Chrome, iOS */
+  -o-transform: translate(0, -50%); /* Для Opera */
+  transform: translate(0, -50%);
+}
+
+.ticket-form-success__button {
+  margin-top: 3vh;
+}
+
+
+.ticket-form-success__text {
+  margin-top: 2vh;
+  color: #FF2B68;
+  font: 700 2rem/1.38em 'Geometria', Arial, Helvetica, sans-serif;
+}
+
+.scroll-panel {
+  width: 20px;
+  position: fixed;
+  right: 2vw;
+  top: 1vh;
+  font: 300 1em/1.2em 'Geometria', Arial, Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tablet.ios .scroll-panel {
+  display: none;
+}
+
+.scroll-panel__line {
+  border-left: 2px solid rgba(255,255,255, 0.3);
+  position: absolute;
+  margin: auto;
+  width: 0;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  display: none;
+}
+
+.scroll-panel_dark .scroll-panel__line{
+  border-left: 2px solid #15240d;
+}
+
+.left-bottom-soaring-image {
+  background: url(../img/dishwasher.png) no-repeat 50%;
+  background-size: contain;
+  width: 19vw;
+  height: 23vw;
+  position: fixed;
+  left: 13vw;
+  bottom: -5vw;
+  z-index: 250;
+}
+
+.right-bottom-soaring-image {
+  background: url(../img/fairy-fan.png) no-repeat 50%;
+  background-size: contain;
+  width: 17vw;
+  height: 23vw;
+  position: fixed;
+  right: 10vw;
+  bottom: -3vw;
+  z-index: 250;
+}
+
+/*pages ends*/
+
+.text-lowercase{
+  text-transform: lowercase;
+}
+
+.bg-blue {
+  background: #009EE6;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40vh;
+}
+
+.tv-promo {
+  background: url(../img/tv-promo.png) no-repeat 50%;
+  background-size: contain;
+  width: 26vw;
+  height: 18vw;
+  margin-bottom: 2vw;
+}
+
+.sticker {
+  background: #FF2B68;
+  width: 240px;
+  height: 240px;
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+}
+
+.sticker__title {
+  font: 700 40px/1.2em Arial, Helvetica, sans-serif;
+  color: #fff;
+  top: 47%;
+}
+
+.sticker__description {
+  font: 100 16px/1.2em Arial, Helvetica, sans-serif;
+  color: #fff;
+  top: 42%;
+}
+
+.full-slide-b {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.full-slide-b__top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 50%;
+  color: #fff;
+}
+
+.full-slide-b__text {
+  position: absolute;
+  left: 7vw;
+  bottom: 10vh;
+}
+
+.full-slide-b__date {
+  margin-bottom: 1.8vh;
+}
+
+.full-slide-b__description {
+
+}
+
+.full-slide-b__bottom {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: 0;
+  padding: 10.5vh 8vw 0 7vw;
+}
+
+.full-slide-b__products {
+  background: url(../img/promo-products-h.png) no-repeat 50%;
+  background-size: contain;
+  height: 100px;
+  margin-bottom: 11vh;
+}
+
+
+.swiper-container_margin {
+  margin: 0 6vw !important;
+}

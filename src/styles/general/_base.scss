@@ -211,6 +211,11 @@ h2, .title-sm {
 	z-index: 600;
 }
 
+.container_page-6 {
+	z-index: 600;
+}
+
+
 .container_less {
 	left: 40%;
 	display: none;
@@ -318,8 +323,6 @@ h2, .title-sm {
 	}
 }
 
-
-
 .swiper-container {
 	margin: 0 auto;
 	position: relative;
@@ -327,4 +330,13 @@ h2, .title-sm {
 	list-style: none;
 	padding: 0;
 	z-index: 1;
+}
+
+.bg-pink {
+	background: url("../img/common/bg-pink.jpg");
+}
+
+.bg-confetti {
+	background: url("../img/common/bg-confetti.png"), linear-gradient(180deg, #C1E7F4 0%, rgba(193, 231, 244, 0.5) 100%);
+	background-color: #fff;
 }

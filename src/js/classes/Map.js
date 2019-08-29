@@ -129,7 +129,6 @@ export class Map {
 
                     var polygonPlacemark = new ymaps.Placemark(
                         item.coordinates, {
-                            hintContent: 'HTML метка сложной формы',
                             balloonContent: item.balloonContent ? item.balloonContent : ''
                         }, {
                             iconLayout: polygonLayout,

@@ -1,4 +1,4 @@
-.page-4 {
+.page-6 {
     & .container {
       width: 100%;
       display: flex;
@@ -6,66 +6,111 @@
 }
 
 .draw-winners {
-    background: #007FC6;
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%), #007FC6;
+    background-color: #007FC6;
     width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
 
-    &__inner {
-        padding: 7.11vh 7.292vw;
-        position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        background: url("../img/page6/confetti.png") no-repeat top center;
+        background-size: cover;
+        height: 62.54vh  /* 616/9.85 */;
     }
 
+    &__inner {
+        padding: 7.31vh 3.229vw 4.06vh 7.292vw  /* 140/19.2 */;
+        position: relative;
+    }
 }
 
+.quest-winners {
+    position: relative;
+    width: 33.333vw;
+    background-color: #FFB4CF;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        background: url("../img/page6/confetti-pink.png") no-repeat top center;
+        background-size: cover;
+        height: 58.48vh  /* 576/9.85 */;
+    }
+}
 
 .raffle {
 
     &__title {
-        font-size: 48px;
-        line-height: 56px;
-        font-weight: 500;
-    }
-
-    &__inner {
-        padding: 4.57vh  /* 45/9.85 */ 4.167vw  /* 80/19.2 */;
+        color: #fff;
     }
 
     &-card {
+        width: 13.021vw  /* 250/19.2 */;
+        height: 25.38vh  /* 250/9.85 */;
+        box-shadow: 6px 10px 12px rgba(0, 0, 0, 0.05);
+        background: #009FDA;
+        box-sizing: border-box;
+        margin-bottom: 2.64vh  /* 26/9.85 */;
 
-        &__inner {
-
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         &__top {
             background: #5BC6E8;
+            max-height: 12.69vh  /* 125/9.85 */;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & img {
+                width: 100%;
+                height: auto;
+            }
         }
 
         &__bottom {
-            background: #009FDA;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 50%;
+            padding: 1.73vh 0.417vw;
+            text-align: center;
+            box-sizing: border-box;
         }
 
-        &__name {
-            font-size: 20px;
-            line-height: 24px;
-            color: #FFFFFF;
+        &__name,
+        &__city,
+        &__number {
+            font-size: 2.03vh  /* 20/9.85 */;
+            line-height: 2.44vh  /* 24/9.85 */;
+            color: #fff;
             font-weight: 500;
+            text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         &__city {
-            font-size: 20px;
-            line-height: 24px;
-            font-weight: normal;
-            color: #FFFFFF;
+            font-size: 1.62vh  /* 16/9.85 */;
         }
 
         &__number {
-            font-size: 20px;
-            line-height: 24px;
-            font-weight: normal;
-            color: #FFFFFF;
-
+            font-size: 1.62vh  /* 16/9.85 */;
         }
-
     }
-
-
 }
