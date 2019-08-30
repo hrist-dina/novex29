@@ -51,3 +51,35 @@
     background-size: cover;
   }
 }
+
+.prizes  {
+  &__list {
+    display: flex;
+    margin-top: 45px;
+  }
+
+  &__item {
+    width: 386px;
+    padding: 20px;
+    margin-right: 32px;
+    background: #FFFFFF;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &img {
+      width: 100%;
+    }
+
+  }
+
+  &__text {
+    margin-top: 25px;
+    font-size: 20px;
+    line-height: 27px;
+    color: #007FC6;
+    font-weight: 500;
+  }
+
+}

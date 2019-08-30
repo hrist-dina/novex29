@@ -114,3 +114,87 @@
         }
     }
 }
+
+.quest-winners {
+
+    &__inner {
+        padding: 7.31vh 3.229vw 4.06vh 7.292vw  /* 140/19.2 */;
+        position: relative;
+
+    }
+
+}
+
+.quest {
+    &__inner {
+
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 40px;
+        color: #CA4D6C;
+        font-weight: 500;
+        border-bottom-style: dashed;
+        
+    }
+
+
+
+}
+
+.quest-card {
+
+    &__list {
+        margin-top: 48px;
+
+    }
+
+    &__item {
+        background: #CA4D6C;
+        padding: 16px;
+        margin-bottom: 8px;
+
+    }
+
+    &__info {
+        margin-left: 12px;
+    }
+    &__present {
+        display: flex;
+        align-items: center;
+
+        &img {
+            max-width: 42px;
+            max-height: 46px;
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    &__name {
+        font-size: 20px;
+        line-height: 24px;
+        color: #fff;
+        font-weight: 500;
+    }
+
+    &__number {
+        font-size: 16px;
+        line-height: 24px;
+        color: #fff;
+        font-weight: normal;
+    }
+
+    &__city {
+        margin-left: auto;
+        color: #FFFFFF;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: normal;
+       
+        
+    }
+
+}
