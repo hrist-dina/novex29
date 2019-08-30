@@ -1,6 +1,9 @@
 export class Parallax {
     constructor(boxerContainer, selector, ratio = 12) {
         this.boxerContainer = document.querySelector(boxerContainer);
+        if (!this.boxerContainer) {
+            return;
+        }
         this.element = this.boxerContainer.querySelector(selector);
         this.ratio = ratio;
 

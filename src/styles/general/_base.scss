@@ -212,7 +212,7 @@ h2, .title-sm {
 }
 
 .container_page-6 {
-	z-index: 600;
+	z-index: 700;
 }
 
 
@@ -221,7 +221,7 @@ h2, .title-sm {
 	display: none;
 }
 .container_winners {
-	top: 100%;
+	right: -100%;
 	min-height: 100%;
 	height: auto !important;
 }
@@ -255,11 +255,11 @@ h2, .title-sm {
 }
 
 .desktop .page.is-show .container_winners {
-	top: 0;
+	right: 0;
 }
 
 .desktop .page.is-hide .container_winners{
-	top: 100%;
+	right: -100%;
 	z-index: 0;
 }
 

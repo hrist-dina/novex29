@@ -1,15 +1,25 @@
 .page-6 {
     & .container {
-      width: 100%;
-      display: flex;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
     }
 }
 
+
+.copyright {
+    font-size: 1.62vh  /* 16/9.85 */;
+    line-height: 2.44vh  /* 24/9.85 */;
+    color: #fff;
+    margin-top: 5.48vh  /* 54/9.85 */;
+}
+
 .draw-winners {
-    position: relative;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%), #007FC6;
     background-color: #007FC6;
-    width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
+    width: 33.333vw;
+    position: relative;
 
     &:before {
         content: '';
@@ -21,35 +31,75 @@
         background: url("../img/page6/confetti.png") no-repeat top center;
         background-size: cover;
         height: 62.54vh  /* 616/9.85 */;
+        cursor: pointer;
     }
+
+    &.active {
+        width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
+    }
+
+    &.quest {
+        position: relative;
+        background-color: #FFB4CF;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: auto;
+            background: url("../img/page6/confetti-pink.png") no-repeat top center;
+            background-size: cover;
+            height: 58.48vh  /* 576/9.85 */;
+            z-index: 0;
+        }
+    }
+
 
     &__inner {
-        padding: 7.31vh 3.229vw 4.06vh 7.292vw  /* 140/19.2 */;
-        position: relative;
+        padding: 7.31vh 3.229vw 4.06vh 7.292vw;
+        min-height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .quest & {
+            padding: 7.31vh 7.292vw 4.06vh 3.229vw;
+        }
     }
 }
 
-.quest-winners {
-    position: relative;
-    width: 33.333vw;
-    background-color: #FFB4CF;
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: auto;
-        background: url("../img/page6/confetti-pink.png") no-repeat top center;
-        background-size: cover;
-        height: 58.48vh  /* 576/9.85 */;
-    }
-}
 
 .raffle {
 
+    @mixin not-active() {
+        .draw-winners:not(.active) & {
+            @content
+        }
+    }
+
+    @mixin quest() {
+        .draw-winners.quest & {
+            @content
+        }
+    }
+
+    position: relative;
+    z-index: 1;
+
     &__title {
         color: #fff;
+
+        @include not-active() {
+            font-size: 3.25vh  /* 32/9.85 */;
+            line-height: 4.06vh  /* 40/9.85 */;
+            font-weight: 500;
+            border-bottom-style: dashed;
+        }
+        @include quest() {
+            color: #CA4D6C;
+        }
     }
 
     &-card {
@@ -60,10 +110,30 @@
         box-sizing: border-box;
         margin-bottom: 2.64vh  /* 26/9.85 */;
 
+        @include not-active() {
+            position: relative;
+            width: 100%;
+            height: auto;
+            box-shadow: none;
+            padding: 1.62vh 0.833vw;
+            margin-bottom: 0.81vh  /* 8/9.85 */;
+            display: flex;
+            align-items: center;
+        }
+
+        @include quest {
+            background: #CA4D6C;
+        }
+
         &__list {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+
+            @include not-active() {
+                margin-top: 4.87vh;
+                flex-direction: column;
+            }
         }
 
         &__top {
@@ -75,6 +145,23 @@
             align-items: center;
             justify-content: center;
 
+            @include quest() {
+                background: #BB3757;
+            }
+
+            @include not-active() {
+                overflow: inherit;
+                background: transparent;
+                max-width: 42px;
+                max-height: 46px;
+                width: 100%;
+                height: auto;
+
+                & img {
+                    @include scale();
+                    width: 100%;
+                }
+            }
             & img {
                 width: 100%;
                 height: auto;
@@ -90,6 +177,13 @@
             padding: 1.73vh 0.417vw;
             text-align: center;
             box-sizing: border-box;
+
+            @include not-active() {
+                max-width: 220px;
+                align-items: flex-start;
+                margin-left: 0.625vw  /* 12/19.2 */;
+                padding: 0;
+            }
         }
 
         &__name,
@@ -107,94 +201,18 @@
 
         &__city {
             font-size: 1.62vh  /* 16/9.85 */;
+            @include not-active() {
+                position: absolute;
+                top: 1.62vh;
+                right: 0.833vw;
+                bottom: auto;
+                left: auto;
+                margin: auto;
+            }
         }
 
         &__number {
             font-size: 1.62vh  /* 16/9.85 */;
         }
     }
-}
-
-.quest-winners {
-
-    &__inner {
-        padding: 7.31vh 3.229vw 4.06vh 7.292vw  /* 140/19.2 */;
-        position: relative;
-
-    }
-
-}
-
-.quest {
-    &__inner {
-
-    }
-
-    &__title {
-        font-size: 32px;
-        line-height: 40px;
-        color: #CA4D6C;
-        font-weight: 500;
-        border-bottom-style: dashed;
-        
-    }
-
-
-
-}
-
-.quest-card {
-
-    &__list {
-        margin-top: 48px;
-
-    }
-
-    &__item {
-        background: #CA4D6C;
-        padding: 16px;
-        margin-bottom: 8px;
-
-    }
-
-    &__info {
-        margin-left: 12px;
-    }
-    &__present {
-        display: flex;
-        align-items: center;
-
-        &img {
-            max-width: 42px;
-            max-height: 46px;
-            width: 100%;
-            height: 100%;
-        }
-
-    }
-
-    &__name {
-        font-size: 20px;
-        line-height: 24px;
-        color: #fff;
-        font-weight: 500;
-    }
-
-    &__number {
-        font-size: 16px;
-        line-height: 24px;
-        color: #fff;
-        font-weight: normal;
-    }
-
-    &__city {
-        margin-left: auto;
-        color: #FFFFFF;
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: normal;
-       
-        
-    }
-
 }

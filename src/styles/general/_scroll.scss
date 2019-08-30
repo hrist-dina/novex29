@@ -275,7 +275,6 @@ hr.hr {
 /*pages begins*/
 .main-wrapper {
   overflow-x: hidden;
-  overflow-y: hidden;
   position: absolute;
   left: 0;
   right: 0;
@@ -298,7 +297,6 @@ hr.hr {
   position: absolute;
   left: 0;
   right: 0;
-  clip: rect(auto, auto, auto, auto);
 }
 
 .container_winners {

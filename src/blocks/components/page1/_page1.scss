@@ -53,25 +53,45 @@
 }
 
 .prizes  {
+  margin-top: 7.41vh  /* 73/9.85 */;
   &__list {
     display: flex;
-    margin-top: 45px;
+    justify-content: space-between;
   }
 
   &__item {
-    width: 386px;
-    padding: 20px;
-    margin-right: 32px;
-    background: #FFFFFF;
+    position: relative;
+    width: 20.104vw  /* 386/19.2 */;
+    height: 39.19vh  /* 386/9.85 */;
+    padding: 2.03vh  1.042vw;
+    margin-right: 1.667vw  /* 32/19.2 */;
+    background: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
     &:last-child {
       margin-right: 0;
     }
+  }
 
-    &img {
-      width: 100%;
+  &__pic {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    top: -2.03vh  /* -20/9.85 */;
+    margin: auto;
+    max-width: 18.229vw  /* 350/19.2 */;
+    height: 30.19vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+    & img {
+      width: auto;
     }
-
   }
 
   &__text {
@@ -80,6 +100,10 @@
     line-height: 27px;
     color: #007FC6;
     font-weight: 500;
+    min-height: 8.12vh  /* 80/9.85 */;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 }

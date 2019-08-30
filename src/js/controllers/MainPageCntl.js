@@ -8,6 +8,7 @@ import {DeviceClassesSetter} from "../classes/DeviceClassesSetter";
 import {TicketForm} from "../classes/TicketForm";
 import {Parallax} from "../classes/Parallax";
 import {Map} from "../classes/Map";
+import {Winners} from "../classes/Winners";
 
 
 export class MainPageCntl {
@@ -26,6 +27,7 @@ export class MainPageCntl {
         this.initInputMask();
         this.initParallax();
         this.initMap();
+        this.initWinners();
 
         this.events();
     }
@@ -166,5 +168,10 @@ export class MainPageCntl {
     initMap() {
         let map = new Map('map');
         map.init();
+    }
+
+    initWinners() {
+        let winners = new Winners();
+        winners.init();
     }
 }

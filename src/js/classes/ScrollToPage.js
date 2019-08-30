@@ -57,15 +57,19 @@ export class ScrollToPage {
     bindPositionTracking() {
         const self = this;
 
-        $('.js-winners2').on('wheel', function (event) {
+        $('.js-winners').on('wheel', function (event) {
             if ($(this).closest('.js-page').hasClass('is-show')) {
                 setTimeout(function () {
                     event.stopPropagation();
                 },2000);
             }
 
-            if ($(this).height() > $(window).height()) {
-                $('.main-wrapper').css('overflow-y', 'scroll');
+            let height = $('.js-winners-content').map(function (i, item) {
+                return $(item).height();
+            });
+            let maxHeight = Math.max(...height.toArray());
+            if (maxHeight > $(window).height()) {
+                self.pageScrollOwner.off('wheel');
             }
 
             let position = $(this).offset().top;
@@ -73,13 +77,15 @@ export class ScrollToPage {
 
             if (deltaY < 0 && position === 0) {
                 self.inScroll = true;
-
                 let pageWinners = $(this).closest('.js-page');
                 pageWinners.removeClass('is-show').addClass('is-hide');
                 pageWinners.prev().removeClass('is-hide').addClass('is-show');
                 setTimeout(function () {
                     self.inScroll = false;
                 }, 1000);
+
+                self.bindScrollPage();
+                self.bindScrollBan();
             }
         });
     }
