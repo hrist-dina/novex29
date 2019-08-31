@@ -115,12 +115,6 @@ h2, .title-sm {
 	}
 }
 
-.container_winners {
-	min-height: 100%;
-	height: auto !important;
-	//position: fixed !important;
-}
-
 .container_brands-table {
 	padding: 5vh 0;
 	-moz-box-sizing: border-box;
@@ -225,8 +219,6 @@ h2, .title-sm {
 }
 .container_winners {
 	right: -100%;
-	min-height: 100%;
-	height: auto !important;
 }
 
 .desktop .container {
@@ -261,9 +253,8 @@ h2, .title-sm {
 	right: 0;
 }
 
-.desktop .page.is-hide .container_winners{
+.desktop .page.is-hide .container_winners {
 	right: -100%;
-	z-index: 0;
 }
 
 
