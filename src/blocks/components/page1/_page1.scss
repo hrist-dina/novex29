@@ -113,14 +113,15 @@
     }
 
     & img {
+      height: 100%;
       width: auto;
     }
   }
 
   &__text {
-    margin-top: 25px;
-    font-size: 20px;
-    line-height: 27px;
+    margin-top: 2.54vh  /* 25/9.85 */;
+    font-size: 2.03vh  /* 20/9.85 */;
+    line-height: 2.74vh  /* 27/9.85 */;
     color: #007FC6;
     font-weight: 500;
     min-height: 8.12vh  /* 80/9.85 */;

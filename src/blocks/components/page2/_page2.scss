@@ -71,6 +71,11 @@
   box-sizing: border-box;
   margin-bottom: 2.84vh  /* 28/9.85 */;
   z-index: 0;
+
+  @include to(1360px) {
+    max-width: 650px;
+  }
+
   @include lg-block {
     margin-bottom: 120px;
   }
@@ -165,6 +170,14 @@
     font-size: 1.62vh  /* 16/9.85 */;
     line-height: 2.44vh  /* 24/9.85 */;
     color: #333333;
+
+    @include to(1360px) {
+      right: -20%;
+      bottom: -10%;
+      width: 220px;
+      height: 80px;
+      padding: 18px;
+    }
 
     @include lg-block {
       position: absolute;
