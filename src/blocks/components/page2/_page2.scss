@@ -72,7 +72,7 @@
   margin-bottom: 2.84vh  /* 28/9.85 */;
   z-index: 0;
 
-  @include to(1360px) {
+  @include to(1400px) {
     max-width: 650px;
   }
 
@@ -171,7 +171,7 @@
     line-height: 2.44vh  /* 24/9.85 */;
     color: #333333;
 
-    @include to(1360px) {
+    @include to(1400px) {
       right: -20%;
       bottom: -10%;
       width: 220px;
