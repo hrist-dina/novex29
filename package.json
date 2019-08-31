@@ -55,6 +55,7 @@
 		"detect.js": "^2.2.3",
 		"inputmask": "^4.0.8",
 		"jquery": "^3.4.1",
+		"slick-carousel": "^1.8.1",
 		"smart-grid": "^2.1.2"
 	}
 }

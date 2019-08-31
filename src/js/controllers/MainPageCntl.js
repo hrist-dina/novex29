@@ -1,5 +1,5 @@
 import $ from "jquery";
-// import slick from 'slick-carousel';
+import slick from 'slick-carousel';
 import Inputmask from 'inputmask/dist/inputmask/inputmask.numeric.extensions'
 import {Menu} from "../classes/Menu";
 import {ScrollToPage} from "../classes/ScrollToPage";
@@ -22,7 +22,7 @@ export class MainPageCntl {
         this.initScrollToPage();
         this.initPaginator();
         this.initTicketForm();
-        //this.initSlider();
+        this.initSlider();
         this.initNavigationWinners();
         this.initInputMask();
         this.initParallax();
@@ -103,19 +103,19 @@ export class MainPageCntl {
             dots: true,
             responsive: [
                 {
-                    breakpoint: 769,
+                    breakpoint: 993,
                     settings: "unslick"
                 },
                 {
                     breakpoint: 768,
                     settings: {
-                        vertical: true,
-                        slidesToShow: 4,
-                        slidesToScroll: 4,
-                        rows: 0,
-                        infinite: false,
-                        arrow: false,
-                        dots: true
+                        mobileFirst: true,
+                        arrows: false,
+                        slidesPerRow: 1,
+                        rows: 2,
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        dots: true,
                     }
                 },
             ]

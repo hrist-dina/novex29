@@ -227,8 +227,8 @@
     content: '';
     position: absolute;
     width: 2px;
-    height: 62px;
-    top: -90px;
+    height: 6.29vh  /* 62/9.85 */;
+    top: -9.14vh  /* -90/9.85 */;
     left: 0;
     right: 0;
     bottom: auto;
