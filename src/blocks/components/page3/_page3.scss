@@ -2,6 +2,10 @@
   & .container {
     width: 100%;
     display: flex;
+
+    @include lg-block {
+      flex-direction: column;
+    }
   }
 }
 
@@ -10,6 +14,11 @@
   height: 100%;
   background: url("../img/page3/bg-card.jpg") no-repeat center;
   background-size: cover;
+  @include lg-block {
+    background-position: center 40%;
+    width: 100%;
+    height: 200px;
+  }
 }
 
 
@@ -23,10 +32,14 @@
   }
 
   &__description {
-    font-size: 27px;
+    font-size: 2.74vh  /* 27/9.85 */;
     color: #007FC6;
     line-height: 32px;
     font-weight: 500;
+
+    @include lg-block {
+      font-size: 22px;
+    }
   }
 }
 
@@ -52,6 +65,9 @@
     width: 95%;
     height: 100%;
     z-index: -1;
+    @include lg-block {
+      transform: matrix(1, 0.03, -0.03, 1, 0, 0);
+    }
   }
 
   &__inner {
@@ -80,6 +96,14 @@
     padding-left: 3.125vw /* 60/19.2 */;
     min-height: 5.58vh /* 55/9.85 */;
 
+    @include lg-block {
+      font-size: 14px;
+      line-height: 20px;
+      padding-left: 40px;
+      margin-bottom: 20px;
+    }
+
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -98,12 +122,21 @@
       color: #CA4D6C;
       font-weight: normal;
       font-style: normal;
+      @include lg-block {
+        font-size: 40px;
+        line-height: 40px;
+      }
     }
 
     & a {
-      font-size: 16px;
+      font-size: 1.62vh  /* 16/9.85 */;
       color: #007FC6;
       font-weight: 500;
+
+      @include lg-block {
+        font-size: 14px;
+        line-height: 20px;
+      }
 
       &:hover {
         text-decoration: none;
@@ -124,20 +157,27 @@
   background: #FFB4CF;
   width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
 
+  @include lg-block {
+    width: 100%;
+  }
+
   &__inner {
     padding: 6.5vh 7.292vw;
     position: relative;
   }
-
 }
 
 .regulations-info {
   margin-top: 4.06vh  /* 40/9.85 */;
 
   & a {
-    font-size: 16px;
+    font-size: 1.62vh  /* 16/9.85 */;
     color: #007FC6;
     font-weight: 500;
+    @include lg-block {
+      font-size: 14px;
+      line-height: 20px;
+    }
 
     &:hover {
       text-decoration: none;
@@ -150,7 +190,10 @@
     line-height: 2.03vh  /* 20/9.85 */;
     color: #007FC6;
     font-weight: 500;
-
+    @include lg-block {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 
   &__description {
@@ -158,6 +201,10 @@
     line-height: 2.03vh  /* 20/9.85 */;
     color: #007FC6;
     font-weight: normal;
+    @include lg-block {
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
 
 }
@@ -165,11 +212,15 @@
 .social {
   margin-top: 0.81vh  /* 8/9.85 */;
   margin-bottom: -1.62vh  /* 16/9.85 */;
+
+  @include lg-block {
+    margin-top: 16px;
+  }
+
   &__list {
     display: flex;
     vertical-align: middle;
     flex-wrap: wrap;
-
   }
 
   &__item {
@@ -178,6 +229,11 @@
     text-decoration: none;
     margin-right: 1.5625vw  /* 30/19.2 */;
     margin-bottom: 1.62vh  /* 16/9.85 */;
+
+    @include lg-block {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -192,6 +248,11 @@
     font-weight: 500;
     margin-left: 0.833vw  /* 16/19.2 */;
     border-bottom: 0.5px solid #CA4D6C;
+
+    @include lg-block {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
   &__item:hover &__text {
     border-bottom-color: transparent;

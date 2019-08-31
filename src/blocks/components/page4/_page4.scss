@@ -2,12 +2,20 @@
   & .container {
     width: 100%;
     display: flex;
+
+    @include lg-block {
+      flex-direction: column;
+    }
   }
 }
 
 .map {
   background: #E1F7FF;
   width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
+  @include lg-block {
+    width: 100%;
+    height: 80vh;
+  }
 }
 
 .quest-map {
@@ -17,6 +25,10 @@
   background: url('../img/page4/bg-bliss.png'), linear-gradient(0deg, #007FC6 0%, #00A4E8 100%);
   background-size: cover;
   z-index: 1;
+
+  @include lg-block {
+    width: 100%;
+  }
 
   &:before {
     content: '';
@@ -31,6 +43,12 @@
     width: 640px;
     height: 504px;
     z-index: -1;
+
+    @include lg-block {
+      width: 100%;
+      max-height: 400px;
+    }
+
   }
 
   &__inner {
@@ -49,6 +67,11 @@
     padding-bottom: 2.44vh  /* 24/9.85 */;
     border-bottom: 1px solid rgba(255, 255, 255, .2);
     margin-bottom: 3.25vh  /* 32/9.85 */;
+
+    @include lg-block {
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 
   &__info {
@@ -56,6 +79,10 @@
     line-height: 2.44vh  /* 24/9.85 */;
     color: #fff;
     margin-bottom: 3.25vh  /* 32/9.85 */;
+    @include lg-block {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 }
 
@@ -76,6 +103,8 @@
   $border: 3px;
   background-clip: padding-box;
   border: solid $border transparent;
+
+
 
   &:before {
     content: '';
@@ -114,6 +143,35 @@
   }
 }
 
+
+.placemark-mini {
+  min-width: 150px;
+  max-height: 50px;
+  padding: 3px 20px 4px 45px;
+
+  & .placemark__title {
+    font-size: 14px;
+    line-height: 18px;
+    color: #007FC6;
+    white-space: nowrap;
+  }
+
+  & .placemark__date {
+    font-size: 12px;
+    line-height: 16px;
+    color: #4F4F4F;
+    white-space: nowrap;
+  }
+}
+
+.placemark-mini:after {
+  top: -5px;
+  left: 5px;
+  width: 35px;
+  height: 40px;
+  background-size: contain;
+}
+
 .panel {
   display: none;
   background-color: #007FC6;
@@ -129,6 +187,23 @@
   line-height: 2.44vh  /* 24/9.85 */;
   color: #fff;
 
+  @include lg-block {
+    padding: 7.11vh 3.167vw 6.11vh;
+    width: 100%;
+    height: 80vh;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &-content {
+    @include lg-block {
+      width: 100%;
+      overflow-y: scroll;
+      padding-bottom: 40px;
+      box-sizing: border-box;
+    }
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -139,14 +214,16 @@
     margin-top: -18px;
     background: #007FC6;
     @include rotate(-45deg);
+    @include lg-block {
+      content: none;
+    }
   }
 
   &__item {
     padding-bottom: 3.25vh  /* 32/9.85 */;
     border-bottom: 1px solid rgba(255, 255, 255, .2);
     margin-bottom: 3.25vh  /* 32/9.85 */;
-    max-height: 50vh;
-    overflow: auto;
+
 
     &:last-child {
       padding-bottom: 0;
@@ -157,6 +234,11 @@
 
   &__pics {
     display: flex;
+    flex-wrap: wrap;
+
+    @include lg-block {
+      margin-bottom: -10px;
+    }
 
     & a {
       display: inline-block;
@@ -166,6 +248,14 @@
       background-repeat: no-repeat;
       background-size: cover;
       margin-right: 0.78125vw  /* 15/19.2 */;
+
+      @include lg-block {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        width: 33% ;
+        max-width: 150px;
+        height: 11.37vh  /* 112/9.85 */;
+      }
 
       &:last-child {
         margin-right: 0;
@@ -178,6 +268,10 @@
     line-height: 5.69vh  /* 56/9.85 */;
     color: #fff;
     margin-bottom: 2.44vh  /* 24/9.85 */;
+    @include lg-block {
+      font-size: 24px;
+      line-height: 32px;
+    }
   }
 
   & .address {
@@ -186,6 +280,12 @@
     line-height: 2.44vh  /* 24/9.85 */;
     color: #fff;
     padding-left: 37px;
+
+    @include lg-block {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
     &:before {
       content: '';
       position: absolute;
@@ -210,11 +310,14 @@
   cursor: pointer;
   background: url("data:image/svg+xml,%3Csvg width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.8701 0L28.2843 1.41422L15.5564 14.1421L28.2844 26.8701L26.8701 28.2843L14.1422 15.5563L1.41421 28.2843L0 26.8701L12.728 14.1421L9.15527e-05 1.41422L1.41431 0L14.1422 12.7279L26.8701 0Z' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;
 
+  @include lg-block {
+    right: 15px;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+  }
+
   &:hover {
     opacity: 0.8;
   }
-}
-
-.panel-content {
-
 }

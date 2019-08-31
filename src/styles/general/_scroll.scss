@@ -282,6 +282,10 @@ hr.hr {
   bottom: 0;
   margin-right: -17px;
   -webkit-overflow-scrolling: touch;
+
+  @include lg-block {
+    margin-right: 0;
+  }
 }
 
 .tablet.ios .main-wrapper {
@@ -1064,7 +1068,7 @@ a.paginator__link_h-hidden:focus {
 }
 
 .ticket-form-success {
-  background: #007AC8 url("../img/page2/circle-pattern.svg") 0 0 repeat;
+  background: #007AC8;
   background-size: contain;
   width: 100%;
   height: 100%;

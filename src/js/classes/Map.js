@@ -123,15 +123,16 @@ export class Map {
 
                 // Добавляем метки с городами
                 this.data.cities.forEach((item) => {
-                    var polygonLayout = ymaps.templateLayoutFactory.createClass(
-                        this.placemarkTemplate(item.title, item.date)
-                    );
 
                     var polygonPlacemark = new ymaps.Placemark(
                         item.coordinates, {
                             balloonContent: item.balloonContent ? item.balloonContent : ''
                         }, {
-                            iconLayout: polygonLayout,
+                            iconLayout: this.createPlaceMark(item, function (zoom) {
+                                // Минимальный размер метки будет 8px, а максимальный мы ограничивать не будем.
+                                // Размер метки будет расти с линейной зависимостью от уровня зума.
+                                return 4 * zoom + 8;
+                            }),
                             // Описываем фигуру активной области "Полигон".
                             iconShape: {
                                 type: 'Polygon',
@@ -162,5 +163,44 @@ export class Map {
             }
 
         });
+    }
+
+    createPlaceMark(item, calculateSize) {
+        var Chips = ymaps.templateLayoutFactory.createClass(
+            this.placemarkTemplate(item.title, item.date),
+            {
+                build: function () {
+                    Chips.superclass.build.call(this);
+                    var map = this.getData().geoObject.getMap();
+                    if (!this.inited) {
+                        this.inited = true;
+                        // Получим текущий уровень зума.
+                        var zoom = map.getZoom();
+                        // Подпишемся на событие изменения области просмотра карты.
+                        map.events.add('boundschange', function () {
+                            // Запустим перестраивание макета при изменении уровня зума.
+                            var currentZoom = map.getZoom();
+                            if (currentZoom !== zoom) {
+                                zoom = currentZoom;
+                                this.rebuild();
+                            }
+                        }, this);
+                    }
+                    // Получим размер метки в зависимости от уровня зума.
+                    let size = calculateSize(map.getZoom()),
+                        element = this.getParentElement().getElementsByClassName('placemark')[0];
+                    let coef = Math.ceil(size / 10);
+
+                    let className = 'placemark-mini';
+                    if (coef < 5) {
+                        $(element).addClass(className);
+                    } else {
+                        $(element).removeClass(className);
+                    }
+                }
+            }
+        );
+
+        return Chips;
     }
 }

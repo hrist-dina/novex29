@@ -2,6 +2,9 @@
   & .container {
     width: 100%;
     display: flex;
+    @include lg-block {
+      flex-direction: column;
+    }
   }
 
   & .card {
@@ -9,6 +12,11 @@
     height: 100%;
     background: url("../img/page2/bg-card.jpg") no-repeat center;
     background-size: cover;
+    @include lg-block {
+      background-position: center 40%;
+      width: 100%;
+      height: 200px;
+    }
   }
 
   & .bg-container {
@@ -42,6 +50,10 @@
   background: #E1F7FF;
   width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
 
+  @include lg-block {
+    width: 100%;
+  }
+
   &__inner {
     padding: 7.11vh 7.292vw;
     position: relative;
@@ -59,6 +71,9 @@
   box-sizing: border-box;
   margin-bottom: 2.84vh  /* 28/9.85 */;
   z-index: 0;
+  @include lg-block {
+    margin-bottom: 120px;
+  }
 
   &:before {
     content: '';
@@ -102,6 +117,12 @@
     padding-left: 3.125vw  /* 60/19.2 */;
     min-height: 5.58vh  /* 55/9.85 */;
 
+    @include lg-block {
+      padding-left: 35px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
     &::before {
       position: absolute;
       left: 0;
@@ -120,10 +141,14 @@
   }
 
   &__text {
-    margin-top: 30px;
-    font-size: 24px;
+    margin-top: 3.05vh  /* 30/9.85 */;
+    font-size: 2.44vh  /* 24/9.85 */;
     color: #007FC6;
     font-weight: 500;
+    @include lg-block {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 
   &__results {
@@ -140,6 +165,14 @@
     font-size: 1.62vh  /* 16/9.85 */;
     line-height: 2.44vh  /* 24/9.85 */;
     color: #333333;
+
+    @include lg-block {
+      position: absolute;
+      right: auto;
+      bottom: auto;
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 }
 
@@ -149,12 +182,17 @@
   border: none;
   box-sizing: border-box;
   color: #fff;
-  font-size: 21px;
-  line-height: 26px;
+  font-size: 2.13vh  /* 21/9.85 */;
+  line-height: 2.64vh  /* 26/9.85 */;
   text-align: center;
   text-decoration: none;
   background: #FF4F73;
   cursor: pointer;
+
+  @include lg-block {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .partners {
@@ -166,17 +204,29 @@
     line-height: 2.03vh;
     font-weight: normal;
     margin-bottom: 1.62vh  /* 16/9.85 */;
+    @include lg-block {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 
   &__list {
     display: flex;
     align-items: center;
+
+    @include lg-block {
+      flex-wrap: wrap;
+      margin-bottom: -30px;
+    }
   }
 
   &__item {
     display: inline-block;
     text-decoration: none;
     margin-right: 30px;
+    @include lg-block {
+      margin-bottom: 30px;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -188,11 +238,15 @@
 .regulations {
 
   & a {
-    font-size: 16px;
+    font-size: 1.62vh  /* 16/9.85 */;
     color: #007FC6;
     font-weight: 500;
     &:hover {
       text-decoration: none;
+    }
+    @include lg-block {
+      font-size: 14px;
+      line-height: 20px;
     }
 
   }
@@ -202,6 +256,11 @@
     color: #007FC6;
     font-weight: 500;
 
+    @include lg-block {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
   }
 
   &__description {
@@ -209,6 +268,10 @@
     line-height: 2.03vh  /* 20/9.85 */;
     color: #007FC6;
     font-weight: normal;
+    @include lg-block {
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
 
 }

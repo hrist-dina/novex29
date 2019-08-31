@@ -21,9 +21,14 @@ h2, .title-sm {
 	font: 500 44px/56px 'Geometria', sans-serif;
 	color: #fff;
 
-	@include md-block {
+	@include lg-block {
 		font-size: 36px;
 		line-height: 46px;
+	}
+
+	@include sm-block {
+		font-size: 26px;
+		line-height: 36px;
 	}
 }
 .content {
@@ -104,11 +109,9 @@ h2, .title-sm {
 	text-indent: -6000px;
 
 	@include lg-block {
-		margin-top: 40px;
-	}
-
-	@include sm-block {
+		margin-top: 50px;
 		width: 100%;
+		left: 0;
 	}
 }
 
@@ -296,7 +299,7 @@ h2, .title-sm {
 }
 
 
-@include md-block {
+@include lg-block {
 	.container {
 		width: 100%;
 		z-index: 0
@@ -309,7 +312,7 @@ h2, .title-sm {
 
 }
 
-@include md-block {
+@include lg-block {
 	.container.page__left {
 		top: auto;
 		left: auto;

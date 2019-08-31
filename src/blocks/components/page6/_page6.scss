@@ -4,6 +4,9 @@
         height: 100%;
         position: relative;
         display: flex;
+        @include lg-block {
+            flex-direction: column;
+        }
     }
 }
 
@@ -21,6 +24,10 @@
     width: 33.333vw;
     position: relative;
 
+    @include lg-block {
+        width: 100%;
+    }
+
     &:before {
         content: '';
         position: absolute;
@@ -36,6 +43,9 @@
 
     &.active {
         width: #{calc(100% - 33.333vw)} /* 640/19.2 */;
+        @include lg-block {
+            width: 100%;
+        }
     }
 
     &.quest {
@@ -64,6 +74,10 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @include lg-block {
+            padding: 7.31vh 3.229vw 4.06vh 3.229vw;
+        }
+
         .quest & {
             padding: 7.31vh 7.292vw 4.06vh 3.229vw;
         }
@@ -74,8 +88,10 @@
 .raffle {
 
     @mixin not-active() {
-        .draw-winners:not(.active) & {
-            @content
+        @include from($break_lg) {
+            .draw-winners:not(.active) & {
+                @content
+            }
         }
     }
 
@@ -109,6 +125,23 @@
         background: #009FDA;
         box-sizing: border-box;
         margin-bottom: 2.64vh  /* 26/9.85 */;
+
+        @include lg-block {
+            width: #{calc(100% / 3 - 15px)};
+            height: 250px;
+        }
+
+
+        @include md-block {
+            width: #{calc(100% / 2 - 10px)};
+        }
+
+        @include sm-block {
+            max-width: 250px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+        }
 
         @include not-active() {
             position: relative;
@@ -144,6 +177,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @include lg-block {
+                max-height: 125px;
+            }
 
             @include quest() {
                 background: #BB3757;
@@ -197,6 +234,11 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+
+            @include lg-block {
+                font-size: 20px;
+                line-height: 24px;
+            }
         }
 
         &__city {
@@ -209,10 +251,17 @@
                 left: auto;
                 margin: auto;
             }
+
+            @include lg-block {
+                font-size: 16px;
+            }
         }
 
         &__number {
             font-size: 1.62vh  /* 16/9.85 */;
+            @include lg-block {
+                font-size: 16px;
+            }
         }
     }
 }

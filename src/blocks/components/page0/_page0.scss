@@ -2,17 +2,36 @@
 
   & .center {
     position: absolute;
-    top: 70px;
+    max-width: 770px;
+    top: 7.11vh  /* 70/9.85 */;
     bottom: auto;
     left: 0;
     right: 0;
     margin: auto;
     text-align: center;
     z-index: 1;
+    box-sizing: border-box;
+    padding: 0 16px;
+    & img {
+      width: 100%;
+    }
+
+    @include lg-block {
+      max-width: 500px;
+      top: 150px;
+      z-index: 5;
+    }
+
+    @include sm-block {
+      top: 130px;
+    }
   }
 
   & .container {
     display: flex;
+    @include lg-block {
+      flex-direction: column;
+    }
   }
 
   & .bliss {
@@ -32,6 +51,15 @@
       background-size: cover;
       opacity: 0.8;
       z-index: 1;
+
+      @include lg-block {
+        top: auto;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-position: center bottom;
+        background-size: contain;
+      }
     }
   }
 
@@ -47,6 +75,17 @@
     height: 752px;
     background: url('../img/page0/2019_bg.png') no-repeat center;
     z-index: 2;
+
+    @include lg-block() {
+      max-height: 500px;
+      top: auto;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      background-size: contain;
+      background-position: center bottom;
+    }
   }
 
   & .balloons {
@@ -62,6 +101,15 @@
       height: 586px;
       background: url('../img/page0/balloons.png') no-repeat top center;
       z-index: 2;
+
+      @include lg-block() {
+        top: auto;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-size: cover;
+        background-position: center bottom;
+      }
     }
   }
 
@@ -74,10 +122,17 @@
       margin: auto;
       content: '';
       position: absolute;
-      width: 1274px;
-      height: 829px;
+      width: 66.354vw  /* 1274/19.2 */;
+      height: 84.16vh  /* 829/9.85 */;
       background: url('../img/page0/girl.png') no-repeat center;
       z-index: 3;
+
+      @include lg-block() {
+        max-height: 500px;
+        width: 100%;
+        background-size: contain;
+        background-position: center bottom;
+      }
     }
   }
 
@@ -87,6 +142,10 @@
     flex-direction: column;
     height: 100%;
     width: 50%;
+    @include lg-block {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 
   & .content__left {
@@ -96,12 +155,28 @@
   & .content__right {
     background: #FFB4CF;
     padding-left: 21.51vw  /* 413/19.2 */;
+    @include lg-block {
+      padding: 20px 15px;
+      height: 90vh;
+    }
   }
 
   &__text {
     margin-top: 38.38vh  /* 378/9.85 */;
     max-width: 493px;
     z-index: 10;
+  }
+
+  .content__left &__text {
+    @include lg-block {
+      margin-top: 30.38vh
+    }
+  }
+
+  .content__right &__text {
+    @include lg-block {
+      margin-top: 16px;
+    }
   }
 
   &__date {
@@ -160,7 +235,7 @@
     margin: auto;
     background-color: #fff;
 
-    @include md-block {
+    @include lg-block {
       content: none;
     }
   }

@@ -21,6 +21,24 @@
       margin: auto auto auto 3.75vw;
       width: 100%;
     }
+
+    @include lg-block {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+
+      & img {
+        display: inherit;
+        max-width: 771px;
+        max-height: 280px;
+        margin: auto auto 0 auto;
+        width: auto;
+      }
+    }
   }
 
   & .bg-container {
@@ -49,24 +67,39 @@
       width: 551px;
       height: 805px;
       z-index: 0;
+      @include lg-block {
+        width: 100%;
+        height: 100%;
+        background-position: center right;
+      }
     }
   }
 
   & .container {
     width: 100%;
     display: flex;
+    @include lg-block {
+      flex-direction: column;
+    }
   }
 
   & .content__left {
     position: relative;
     width: 50vw;
     margin: 0;
+    @include lg-block {
+      width: 100%;
+      height: 400px;
+    }
   }
 
   & .content__right {
     width: 50vw;
     margin: 0;
     z-index: 1;
+    @include lg-block {
+      width: 100%;
+    }
   }
 
   & .content__title {
@@ -78,7 +111,7 @@
 
   & .block-vertical-center {
 
-    @include md-block {
+    @include lg-block {
       transform: none;
     }
   }
@@ -167,13 +200,11 @@
   font-size: 1.62vh  /* 16/9.85 */;
   line-height: 2.44vh  /* 24/9.85 */;
   font-family: 'Geometria', Arial, Helvetica, sans-serif;
-}
 
-.tablet .ticket-form__verification {
-  font-weight: 400;
-  font-size: 1.3rem;
-  line-height: 1.4em;
-  font-family: 'Geometria', Arial, Helvetica, sans-serif;
+  @include lg-block {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .ticket-form__verification-check {
@@ -260,6 +291,10 @@
   font-size: 0.8em;
   margin-top: 1px;
   margin-bottom: 0;
+  @include lg-block {
+    font-size: 0.6em;
+    bottom: -1.6em;
+  }
 }
 
 .tablet .ticket-form__error-text {

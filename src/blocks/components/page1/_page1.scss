@@ -30,6 +30,10 @@
       box-sizing: border-box;
       margin: auto;
       padding-bottom: 19.29vh  /* 190/9.85 */;
+
+      @include lg-block {
+        padding-bottom: 20px
+      }
     }
   }
 
@@ -57,6 +61,10 @@
   &__list {
     display: flex;
     justify-content: space-between;
+    @include lg-block {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
@@ -70,6 +78,14 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    @include lg-block {
+      max-width: 386px;
+      width: 100%;
+      height: 100%;
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -89,6 +105,13 @@
     align-items: flex-end;
     justify-content: center;
     box-sizing: border-box;
+
+    @include lg-block {
+      position: relative;
+      top: 0;
+      height: auto;
+    }
+
     & img {
       width: auto;
     }
