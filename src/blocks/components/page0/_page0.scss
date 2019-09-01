@@ -143,6 +143,7 @@
     height: 100%;
     width: 50%;
     @include lg-block {
+      height: 100vh;
       width: 100%;
       box-sizing: border-box;
     }
@@ -169,7 +170,7 @@
 
   .content__left &__text {
     @include lg-block {
-      margin-top: 30.38vh
+      margin-top: 35.38vh
     }
   }
 
