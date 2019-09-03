@@ -32,6 +32,13 @@ export class Map {
 
     }
 
+    isMobile() {
+        if ($(window).width <= 992 || $('html').has('mobile')) {
+            return true;
+        }
+        return false;
+    }
+
     initPanel() {
         // Пример реализации боковой панели на основе наследования от collection.Item.
         // Боковая панель отображает информацию, которую мы ей передали.
@@ -97,18 +104,35 @@ export class Map {
     }
 
     initMap() {
+        const self = this;
         ymaps.ready(['Panel']).then(() => {
 
             try {
+
+                let zoom = this.data.zoom ? this.data.zoom : 7;
+                if (this.isMobile()) {
+                    zoom = 5.5;
+                }
+
+                let center = this.data.center ? this.data.center : [53.98620678930011, 87.15843014691794];
+
+                if (this.isMobile()) {
+                    center = [53.92620678930011, 85.15843014691794];
+                }
+
                 // Инитим карту
                 let map = new ymaps.Map(this.map, {
-                    center: this.data.center ? this.data.center : [53.98620678930011, 87.15843014691794],
-                    zoom: this.data.zoom ? this.data.zoom : 7,
+                    center: center,
+                    zoom: zoom,
                     controls: []
                 });
 
                 map.behaviors.disable('scrollZoom');
                 map.controls.add('zoomControl');
+
+                if (this.isMobile()) {
+                    map.behaviors.disable(['drag','dblClickZoom','multiTouch']);
+                }
 
                 // Создадим и добавим панель на карту.
                 var panel = new ymaps.Panel();
@@ -146,6 +170,7 @@ export class Map {
                     //map.geoObjects.add(polygonPlacemark);
                 });
 
+
                 // Добавим коллекцию на карту.
                 map.geoObjects.add(collection);
                 // Подпишемся на событие клика по коллекции.
@@ -155,7 +180,9 @@ export class Map {
                     // Зададим контент боковой панели.
                     panel.setContent(target.properties.get('balloonContent'));
                     // Переместим центр карты по координатам метки с учётом заданных отступов.
-                    map.panTo(target.geometry.getCoordinates(), {useMapMargin: true});
+                    if(!self.isMobile) {
+                        map.panTo(target.geometry.getCoordinates(), {useMapMargin: true});
+                    }
                 });
 
             } catch (e) {
