@@ -117,6 +117,7 @@
 
     @include lg-block {
       transform: none;
+      top: 0;
     }
   }
 
@@ -131,7 +132,7 @@
 }
 
 .ticket-form__elem {
-  margin-bottom: 2.44vh  /* 24/9.85 */;
+  margin-bottom: 16px
 }
 
 .tablet .ticket-form__elem {
@@ -198,7 +199,7 @@
 }
 
 .ticket-form__verification {
-  margin-bottom: 3vh;
+  margin-bottom: 24px;
   color: #333333;
   font-weight: 400;
   font-size: 1.62vh  /* 16/9.85 */;
@@ -206,6 +207,7 @@
   font-family: 'Geometria', Arial, Helvetica, sans-serif;
 
   @include lg-block {
+    margin-bottom: 3vh;
     font-size: 14px;
     line-height: 20px;
   }
