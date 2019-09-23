@@ -175,7 +175,7 @@
 .panel {
   display: none;
   background-color: #007FC6;
-  padding: 7.11vh  /* 70/9.85 */ 4.167vw  /* 80/19.2 */;
+  padding: 5.11vh  /* 70/9.85 */ 4.167vw  /* 80/19.2 */;
   width: 33.333vw;
   box-sizing: border-box;
   height: 100vh;
@@ -188,7 +188,7 @@
   color: #fff;
 
   @include lg-block {
-    padding: 7.11vh 3.167vw 6.11vh;
+    padding: 6.11vh 3.167vw 6.11vh;
     width: 100%;
     height: 80vh;
     font-size: 14px;
@@ -199,7 +199,7 @@
     @include lg-block {
       width: 100%;
       overflow-y: scroll;
-      padding-bottom: 40px;
+      padding-bottom: 20px;
       box-sizing: border-box;
     }
   }
@@ -220,9 +220,9 @@
   }
 
   &__item {
-    padding-bottom: 3.25vh  /* 32/9.85 */;
+    padding-bottom: 2.5vh;
     border-bottom: 1px solid rgba(255, 255, 255, .2);
-    margin-bottom: 3.25vh  /* 32/9.85 */;
+    margin-bottom: 1.25vh;
 
 
     &:last-child {
@@ -254,7 +254,7 @@
         margin-bottom: 10px;
         width: 33% ;
         max-width: 150px;
-        height: 11.37vh  /* 112/9.85 */;
+        height: 14.37vh  /* 112/9.85 */;
       }
 
       &:last-child {
@@ -267,7 +267,7 @@
     font-size: 3.25vh  /* 32/9.85 */;
     line-height: 5.69vh  /* 56/9.85 */;
     color: #fff;
-    margin-bottom: 2.44vh  /* 24/9.85 */;
+    margin-bottom: 2.2vh;
     @include lg-block {
       font-size: 24px;
       line-height: 32px;
